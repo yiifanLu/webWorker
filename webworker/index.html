@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const MODEL_URL = 'web_model/tensorflowjs_model.pb';
+    const WEIGHTS_URL = 'web_model/weights_manifest.json';
+
+   var webworker=new Worker('test.js');
+    webworker.onmessage = function (event) {
+
+       // doSomething();
+    };
+    webworker.postMessage({headpackage:"loadModel",MODEL_URL:MODEL_URL,WEIGHTS_URL:WEIGHTS_URL});
+
+</script>
+</body>
+</html>
